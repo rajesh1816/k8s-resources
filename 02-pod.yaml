@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: catalogue-pod
+  labels:
+    project: roboshop
+    environment: dev
+    k8s: true 
+spec:
+  containers:
+  - name: catalogue-nginx-container
+    image: nginx
