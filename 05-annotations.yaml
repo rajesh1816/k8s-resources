@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: catalogue-pod
+  labels:
+    purpose: labels-demo
+    project: roboshop
+    environment: dev
+    tier: backend
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+    purpose: "this is the annotations and labels yaml file for demo purpose"
+spec:
+  containers:
+  - name: catalogue-nginx-container
+    image: nginx
