@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: catalogue
+  name: catalogue-ns
   labels:
     project: roboshop
     environment: dev
-    k8s: true 
