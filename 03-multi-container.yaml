@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: catalogue
+  name: multi-container
   labels:
     project: roboshop
     environment: dev
