@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+  labels:
+    project: roboshop
+    environment: dev
+data:
+  # Key-value pairs
+  course: "Devops with AWS"
+  trainer: "siva kumar m"
+  duration: "120 hrs"
