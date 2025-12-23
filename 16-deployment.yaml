@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    purpose: deployment-demo
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      project: roboshop
+      environment: dev
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        environment: dev
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.29
