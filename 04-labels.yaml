@@ -9,5 +9,5 @@ metadata:
     tier: backend
 spec:
   containers:
-  - name: catalogue-nginx-container
+  - name: nginx
     image: nginx

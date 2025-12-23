@@ -12,5 +12,5 @@ metadata:
     purpose: "this is the annotations and labels yaml file for demo purpose"
 spec:
   containers:
-  - name: catalogue-nginx-container
+  - name: nginx
     image: nginx
