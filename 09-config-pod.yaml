@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: env-variables
+  name: configmap-pod
   labels:
     project: roboshop
     environment: dev
