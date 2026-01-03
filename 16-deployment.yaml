@@ -3,11 +3,12 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   labels:
-    purpose: deployment-demo
+    project: roboshop
+    environment: dev
     tier: frontend
 spec:
   # modify replicas according to your case
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       project: roboshop
@@ -22,4 +23,23 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:mainline-alpine3.23
+        image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer-service
+  labels:
+    project: roboshop
+    environment: dev
+    tier: frontend
+spec:
+  selector:   # Selects Pods with the label 'project: roboshop, environment: dev, tier: frontend'
+    project: roboshop
+    environment: dev
+    tier: frontend      
+  ports:
+    - protocol: TCP
+      port: 80        # The port the Service itself exposes
+      targetPort: 80 # container port
+  type: LoadBalancer
